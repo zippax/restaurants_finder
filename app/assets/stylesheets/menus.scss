@@ -1,0 +1,41 @@
+.menu{
+	max-width: 700px;
+	background: #f6f3f3;
+	border-bottom: 1px solid #cccccc;
+	margin: 0 auto;
+	padding: 10px;
+	padding-left: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.menu:hover{
+	background: #F1F2EC;
+}
+.distroyBtnMenu{
+	float: left;
+	margin-left: 20px;
+	color: #D51F1F;
+	a:hover, a:link, a:visited{
+		color: #D51F1F;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}
+.orderInList{
+	text-align: center;
+}
+
+#edit{
+	float: right;
+	margin-right: 40px;
+	a:hover, a:link, a:visited{
+		color: #000;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}

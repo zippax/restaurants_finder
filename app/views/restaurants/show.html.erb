@@ -1,0 +1,60 @@
+<div class="infoHolder">
+	<div class="restaurantHeader">
+		<%= image_tag @restaurant.avatar.url(:thumb), :class => "restaurantAvatar" %>
+		<h1><%= @restaurant.name %></h1>
+		<p id="tags"><%= @restaurant.tags %></p>
+		<p id="location"><%= @restaurant.location %>, <%= @restaurant.city %></p>
+		<p id="phone"><%= number_to_phone(@restaurant.phone, area_code: true) %></p>
+	</div>
+	<% if user_signed_in? %>
+		<%= link_to "Add new menu", new_menu_path(:restaurant_id => @restaurant.id), class: "button add mb40", id: "add_new_menu" %>
+	<% end %>
+</div>
+<div class="clear" />
+<div class="menuHolder">
+		<% @menus.each do |menu| %>
+			<% 
+			# @count = Item.where(:menuId => menu.id).count
+			# if @count > 0
+			%>
+				<div class="category">
+						<%= menu.name %> 
+						<% if user_signed_in? %>
+							<div class="floatRight"><%= link_to "Add Item", new_item_path(:restaurant_id => @restaurant.id, :menu_id => menu.id), class: "button add" %><%= link_to "Edit menu", edit_menu_path(:id => menu, :restaurant_id => params[:id]), class: "button edit" %></div>
+						<% end %>
+				</div>
+				<div>
+				<table class="table table-striped">
+					<% 
+					@items = Item.where(menuId: menu.id)
+					@items.each do |item| 
+					%>
+						
+							<td class="item noBottomBorder">
+							<h1><%= item.name %></h1>
+							<span><%= number_to_currency(item.price) %></span>
+							<% if item.description? %>
+							<p class="description" title="<%= item.description %>"><%= truncate item.description, length: 150 %></p>
+							<div>
+								<% if user_signed_in? %>
+									<%= link_to 'Edit Item', edit_item_path(item.id, :menu_id => menu.id, :restaurant_id => params[:id], :fromMenu => "1"), class: "button edit" %>
+									<%= link_to 'Delete this Item', { action: :destroy, :controller => 'items', id: item.id, :fromMenu => "1" }, method: :delete, data: { confirm: 'Are you sure?' }, class: "remove" %>
+								<% end %>
+							</div>
+							<% else %>
+								<p id="noDesc">No Description Founded</p>
+								<% if user_signed_in? %>
+									<%= link_to 'Edit Item', edit_item_path(item.id, :menu_id => menu.id, :restaurant_id => params[:id], :fromMenu => "1"), class: "button edit" %>
+									<%= link_to 'Delete this Item', { action: :destroy, :controller => 'items', id: item.id, :fromMenu => "1" }, method: :delete, data: { confirm: 'Are you sure?' }, class: "remove" %>
+								<% end %>
+							<% end %>
+							</td>
+						
+					<% end %>
+					</table>
+				</div>
+				<div class="clear" />
+			<% # end %>
+		<% end %>
+</div>
+

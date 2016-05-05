@@ -1,0 +1,419 @@
+
+// Standered Vars
+$menuHolderWidth: 70%;
+
+header{
+	width: $menuHolderWidth;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+// Index pages - all restaurants
+
+.restaurantsHolder{
+	width: $menuHolderWidth;
+	margin: 0 auto;
+
+	.restaurant{
+		min-height: 110px;
+		padding: 10px;
+		border-bottom: 1px solid #ccc;
+		a:hover, a:link, a:visited{
+			color: #000;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		h3{
+			font-weight: normal;
+			a:hover, a:link, a:visited{
+				color: #D4363C;
+			}
+		}
+		.restaurantAvatar{
+			float: left;
+			margin-right: 30px;
+		}
+	}
+}
+
+.search{
+	width: $menuHolderWidth;
+	margin: 0 auto;
+	height: 90px;
+	input[type="text"]{
+		width: 50%;
+		border:1px solid #ccc;
+	    border-right:none;
+	    padding:4px;
+	    padding-left: 20px;
+	    margin:0px;
+	    float:left;
+	    height:30px;
+	    overflow:hidden;
+	    line-height:16px;
+	    outline: none;
+	    font-size: 16px;
+	}
+	input[type="submit"]{
+		border:1px solid #ccc;
+	    background:#D4363C;
+	    color: #ffffff;
+	    vertical-align:top;
+	    padding:4px;
+	    margin:0;
+	    float:left;
+	    height:40px;
+	    overflow:hidden;
+	    width:100px;
+	    text-align:center;
+	    line-height:16px;
+	    outline: none;
+	    font-size: 14px;
+	}
+
+	.reset{
+		float: right;
+		margin-top: 15px;
+	}
+	a:hover, a:link, a:visited{
+			color: #000000;
+			text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}
+
+.restaurantAvatar{
+	float: left;
+	margin-right: 30px;
+}
+
+// hide def notice
+.notice{
+	display: none;
+}
+
+.infoHolder{
+	width: $menuHolderWidth;
+	margin: 0 auto;
+	.restaurantHeader{
+		margin-bottom: 50px;
+		h1{
+			margin: 0; padding: 0;
+		}
+		p{
+			margin: 0; padding: 0;
+		}
+		#tags{
+			color: #393C3A;
+		}
+		#location{
+			margin-top: 20px;
+			margin-left: 130px;
+		}
+		#phone{
+			margin-left: 130px;
+		}
+	}
+}
+.mb40{
+	margin-bottom: 40px;
+}
+#add_new_menu{
+	float: right;
+}
+.simple_form {
+	max-width: 700px;
+	min-width: 320px;
+	padding: 40px;
+	background: #F1F1EC;
+	-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	.input{
+		input{
+			display: block;
+			width: 50%;
+			margin: 0;
+			padding: 10px;
+			float: left;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+		}
+		input[type="text"]:focus, input[type="tel"]:focus, input[type="number"]:focus {outline:none;}
+		textarea{
+			width: 100%;
+			height: 100px;
+			border: 1px solid #cccccc;
+			margin-bottom: 20px;
+			padding: 10px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		textarea:focus {outline:none;}
+		select{
+			width: 50%;
+			height: 30px;
+			line-height: 30px;
+			-webkit-appearance: menulist-button;
+			margin-bottom: 10px;
+		}
+		select:focus {outline:none;}
+
+		label{
+			// display: none;
+		}
+		.boolean{
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+	input[type=submit] {
+		width: 50%;
+		height: 35px;
+		background: #2AC874;
+		border: 0px;
+		font-weight: normal;
+		color: #1b7403;
+		font-size: 16px;
+		float: left;
+	}
+	input[type="submit"]:focus {outline:none;}
+	.newLineLabel{
+		clear: both;
+		margin-bottom: 20px;
+	input[type="checkbox"]{
+			width: 13px;
+		    height: 13px;
+		    padding: 0;
+		    margin:0;
+		    position: relative;
+		    top: 3px;
+		 	 
+		}
+
+	}
+
+
+	#restaurant_minPrice{
+		width: 50%;
+	}
+	#restaurant_name{
+		border-right: 0px;
+	}
+	#restaurant_location{
+		border-right: 0px;
+	}
+}
+
+.formHolder{
+	max-width: 700px;
+	margin: 0 auto;
+	margin-top: 100px;
+	.title{
+		background: #d2d4c8;
+		margin: 0;
+		padding: 10px;
+		padding-left: 40px;
+		font-size: 19px;
+		font-weight: normal;
+	}
+	span{
+		float: right;
+		margin-right: 20px;
+		margin-top: 2px;
+	}
+	.distroyBtn{
+		float: left;
+		margin-left: 20px;
+		color: #D51F1F;
+		a:hover, a:link, a:visited{
+			color: #D51F1F;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+	@media (max-width:520px) { 
+		.distroyBtn{
+			width: 100%;
+			margin-left: 0px;
+			margin-top: 20px;
+		}
+		
+	}
+}
+#newRestaurant{
+	width: 700px;
+	.title{
+		color: #ffffff;
+	}
+}
+
+.tags{
+	color: #737876;
+	font-size: 12px;
+}
+.notify{
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+	padding: 20px;
+	background: #C5E3CB;
+	color: #246A3E;
+	border: 1px solid #60B37D;
+	border-radius: 5px;
+	opacity: 0.8;
+	z-index: 999999;
+}
+
+/*
+*	MENU STYLE	
+*/
+.menuHolder{
+	width: $menuHolderWidth;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+
+.category{
+	background: #E6E8E4;
+	font-weight: bold;
+	padding: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+	.btn{
+		margin-top: -20px;
+	}
+}
+.item{
+	width: 50%;
+	float: left;
+	color: #000;
+	h1{
+		padding-left: 10px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #D4363C;
+	}
+	span{
+		position: relative;
+		float: right;
+		color: #000000;
+		font-weight: bold;
+		top: -30px;
+		padding-right: 10px;
+	}
+	.description{
+		padding-left: 10px;
+		color: #525856;
+		font-weight: normal;
+		height: 50px;
+		padding-bottom: 20px;
+		color: #6E7270;
+	}
+	.button{
+		margin-left: 10px;
+	}
+}
+
+.item:hover{
+	background: #f9f9f9;
+	cursor: pointer;
+}
+
+.noBottomBorder{
+	border-bottom: none;
+}
+.floatRight{
+	float: right;
+}
+.remove{
+	color: #5E6361;
+	font-weight: normal;
+}
+#noDesc{
+	display: block;
+	opacity: 0;
+	height: 0px;
+}
+@media (max-width:1100px) { 
+	.menuHolder{
+		width: 100%;
+	}
+	.infoHolder{
+		width: 100%;
+		padding-left: 30px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	#add_new_menu{
+		margin-right: 50px;
+	}
+}
+@media (max-width:700px) { 
+	.infoHolder{
+		width: 100%;
+		padding-left: 30px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.menuHolder{
+		width: 100%;
+	}
+	.item{
+		width: 100%;
+	}
+	.itemBorder{
+		border-right: 0px;
+	}
+}
+
+.table{
+	margin: 0;
+}
+.table-bordered{
+	td{
+		// border-bottom: 0px !important;
+		transition: left 0.5s;
+	}
+}
+.table-striped{
+	tr{
+
+		td{
+			background: #ffffff;
+		}
+		
+	}
+}
+
+
+
+div.file {
+    width: 79px;
+    height: 55px;
+    background: url(upload.png);
+    overflow: hidden;
+    float: right;
+    margin-top: 20px;
+}
+
+div.file input {
+    display: block !important;
+    width: 79px !important;
+    height: 55px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+
+}

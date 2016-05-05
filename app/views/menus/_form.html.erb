@@ -1,0 +1,48 @@
+<div class="formHolder">
+	<div class="title">
+		<% if @menu.new_record? %>
+			New Menu
+		<% else %>
+			Edit Menu
+		<% end %>
+		<span>
+			<% if @menu.new_record? %>
+				<%= link_to image_tag("cancel.png", :border => 0), {:action => 'show', :controller => 'restaurants', :id => params[:restaurant_id]} %>
+			<% elsif params[:restaurant_id] and !params[:mainForm] %>
+				<%= link_to image_tag("cancel.png", :border => 0), {:action => 'show', :controller => 'restaurants', :id => params[:restaurant_id]} %>
+			<% elsif params[:mainForm] %>
+				<%= link_to image_tag("cancel.png", :border => 0), {:action => 'new', :controller => 'menus', :restaurant_id => params[:restaurant_id]} %>
+			<% else %>
+				<%= link_to image_tag("cancel.png", :border => 0), {:action => 'new', :controller => 'menus', :restaurant_id => params[:restaurant_id]} %>
+			<% end %>
+		</span>
+	</div>
+	<%= simple_form_for @menu do |t| %>
+	<%= t.input :name, required: true,  :placeholder => "Menu/Category name", :label => false %>
+	<% if @menu.new_record? %>
+		<%= t.input :orderInList, :as => :hidden, input_html: {value: '1'},  :label => false %>
+	<% else %>
+		<%= t.input :orderInList, :input_html => { :class => "orderInList" },  :label => false %>
+	<% end %>
+		<%= t.input :restaurantId, :as => :hidden, input_html: {:value => params[:restaurant_id]} %>
+	<%= t.submit  :class => "btn" %>
+		<div class="distroyBtnMenu">
+			<% if !@menu.new_record? %>
+				<%= link_to 'Delete this Menu', { action: :destroy, id: @menu.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+	<% end %>
+</div>
+<% if @menu.new_record? %>
+	<% @menus.each do |menu| %>
+		<div class="menu">
+			<%= menu.name %>
+			<span id="edit">
+				<%= link_to "Edit", edit_menu_path(:id => menu, :restaurant_id => params[:restaurant_id], :mainForm => "Yes") %>
+			</span>
+		</div>
+	<% end %>
+<% end %>
+
+

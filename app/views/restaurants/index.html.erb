@@ -1,0 +1,46 @@
+<header>
+	<%= link_to 'New Restaurants', new_restaurant_path %> | 
+	<% if user_signed_in? %>
+		<%= link_to 'Logout', destroy_user_session_path, :method => :delete %> 
+	<% else %>
+		<%= link_to 'Login', new_user_session_path %>
+	<% end %>
+</header>
+
+
+<div class="search">
+	<%= form_tag restaurants_path, :method => "get" do %>
+		<%= text_field_tag :search, params[:search], :placeholder => "E.g. Sushi, pad thai, Bob's pizza", :autocomplete => :off %>
+		<%= submit_tag "Search", :name => nil %>
+		<%= link_to "Reset Search", restaurants_path, :class => "reset" %>
+	<% end %>
+</div>
+<div class="clear"></div>
+
+<div class="restaurantsHolder">
+	<% @restaurants.each do |restaurant| %>
+			<div class="restaurant">
+				<%= link_to restaurant do %>
+					<%= image_tag restaurant.avatar.url(:thumb), :class => "restaurantAvatar" %>
+				<% end %>
+
+				<h3><%= link_to restaurant.name, restaurant %></h3>
+				<p class="tags"><%= restaurant.tags %></p>
+				<% if user_signed_in? %>
+				<p><%= link_to "Edit", edit_restaurant_path(restaurant) %></p>
+				<% end %>
+			</div>
+	<% end %>
+	<% if @restaurants.count < 1 %>
+		<p>No results match your search</p>
+	<% end %>
+</div>
+
+
+
+<% if flash[:notice] %>
+	<div class="notify" id="notify">
+		<%= flash[:notice] %>
+	</div>
+<% end %>	
+

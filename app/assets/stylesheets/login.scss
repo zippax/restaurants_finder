@@ -1,0 +1,27 @@
+.loginPage{
+	input{
+		outline: none;
+	}
+	h2{
+		margin: 0; padding: 0;
+		margin-left: 40px;
+	}
+	input[type="checkbox"]{
+		width: 13px;
+	}
+	.user_remember_me{
+		display: none;
+		margin-bottom: 40px;
+	}
+	.button{
+		margin: 0;
+	}
+	a{
+		margin-left: 40px;
+		margin-top: 15px;
+		display: block;
+	}
+	.simple_form{
+		background: #ffffff;
+	}
+}

@@ -1,0 +1,37 @@
+<div class="formHolder">
+	<div class="title">
+		<% if @restaurant.new_record? %>
+			New Restaurant
+		<% else %>
+			Edit Restaurant
+		<% end %>
+		<span>
+			<%= link_to image_tag("cancel.png", :border => 0), {:action => 'index', :controller => 'restaurants'} %>
+		</span>
+	</div>
+	<%= simple_form_for @restaurant do |t| %>
+	<%= t.input :name, required: true,  :placeholder => "Restaurant name", :label => false %>
+	<%= t.input :phone, required: true, :placeholder => "Phone", :label => false %>
+	<%= t.input :location, required: true, :placeholder => "Location", :label => false %>
+	<%= t.input :city, required: true,  :placeholder => "City", :label => false %>
+	<%= t.input :country,   priority: [ "US" ], :label => false %>
+	<%= t.input :postalCode,:as => :hidden,  :placeholder => "Postal code", disabled: true, :label => false %>
+	<%= t.input :minPrice,  :placeholder => "Minimum Price", :label => false %>
+	<%= t.input :tags,  :placeholder => "Example: BBQ, Italian, Indian...", :label => false %>
+
+	<%= t.input :avatar, :label => false %>
+	
+	<%= t.input :code, :as => :hidden, :label => false %>
+	<div class="newLineLabel">
+		<%= t.input :isDelivery, :label => "Delivery", :class => "isDelivery" %>
+	</div>
+	<%= t.submit  :class => "btn" %>
+		<div class="distroyBtn">
+			<% if !@restaurant.new_record? %>
+				<%= link_to 'Delete this Restaurant', { action: :destroy, id: @restaurant.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+	<% end %>
+
+</div>
