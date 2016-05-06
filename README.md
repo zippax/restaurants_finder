@@ -4,7 +4,7 @@ This is a clone app of grubhub website. make it with Ruby on Rails to improve my
 <br />
 DEMO
 ===============
-Link: http://www.alikhatem.com/restaurants
+Link: http://alikhatem.com/restaurants
 <br />
 Username: demo@zippax.com
 <br />
