@@ -2,8 +2,14 @@
 This is a clone app of grubhub website. make it with Ruby on Rails to improve my experience in this cool framework.
 
 == DEMO
+<<<<<<< HEAD
+A- Link: http://www.alikhatem.com/restaurants
+B- Username: demo@zippax.com
+C- Password: @password
+=======
 Link: http://www.alikhatem.com/restaurants
 Username: demo@zippax.com
 |
 Password: @password
+>>>>>>> 4811efea47120d5c25925e74f58ec7997889fd97
 
